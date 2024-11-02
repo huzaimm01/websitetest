@@ -13,6 +13,7 @@
       flex-direction: column;
       align-items: center; /* Center all items horizontally */
       padding: 20px;
+      background-color: #f9f9f9; /* Light background for contrast */
     }
 
     .projects-container {
@@ -21,16 +22,19 @@
       gap: 20px; /* Space between project cards */
       width: 100%; /* Ensure it takes full width */
       max-width: 800px; /* Limit max width of the container */
+      margin-top: 20px; /* Add some margin above the projects section */
     }
 
     .project-card {
-      margin: 0; /* Remove margin since we use grid gap */
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 8px;
       background-color: #fff; /* Background color for cards */
       cursor: pointer;
       transition: background-color 0.3s; /* Optional: Transition for hover effect */
+      position: relative; /* For z-index control */
+      overflow: hidden; /* Ensures the content stays within the card */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     }
 
     .project-card:hover {
@@ -40,9 +44,8 @@
 
     .expanded-content {
       display: none;
-      margin: 20px auto;
+      margin: 20px 0; /* Margin for separation from title */
       padding: 20px;
-      max-width: 100%; /* Allow it to fill the card */
       border: 1px solid #ccc;
       border-radius: 8px;
       background-color: #f9f9f9; /* Change the background color as needed */
@@ -54,6 +57,32 @@
     .project-card.expanded .expanded-content {
       display: block;
     }
+
+    /* Tags styles */
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #e0e0e0; /* Light background for tags */
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin: 5px 2px; /* Space between tags */
+      font-size: 0.9em;
+    }
+
+    .tag.html { background-color: #f44336; color: white; }
+    .tag.css { background-color: #2196F3; color: white; }
+    .tag.js { background-color: #FFEB3B; color: black; }
+    .tag.python { background-color: #4CAF50; color: white; }
+    .tag.ruby { background-color: #E91E63; color: white; }
+    .tag.php { background-color: #9C27B0; color: white; }
+    .tag.sql { background-color: #3F51B5; color: white; }
+    .tag.node { background-color: #8BC34A; color: black; }
+    .tag.arduino { background-color: #FF9800; color: white; }
+    .tag.csharp { background-color: #007ACC; color: white; }
+
   </style>
 </head>
 <body>
