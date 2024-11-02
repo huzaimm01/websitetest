@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me | Huzaim Malik</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
 </head>
 <body>
   <div id="app">
@@ -31,6 +28,7 @@
     <section class="skills-container">
       <h2 class="skills-title">Skills</h2>
       <div class="skills-grid">
+        <!-- Skills items with images and descriptions -->
         <div class="skill"><img src="html.png" alt="HTML"><p>HTML</p></div>
         <div class="skill"><img src="css.png" alt="CSS"><p>CSS</p></div>
         <div class="skill"><img src="js.png" alt="JavaScript"><p>JavaScript</p></div>
@@ -87,12 +85,10 @@
     </div>
   </div>
 
-  
-</body>
   <style>
-.theme-toggle {
-  cursor: pointer; /* Change cursor to pointer */
-}
+    .theme-toggle {
+      cursor: pointer; /* Change cursor to pointer */
+    }
 
     * {
       margin: 0;
@@ -198,73 +194,48 @@
     .journey-container {
       text-align: center;
       margin: 2rem 0;
-      width: 90%; /* Control layout */
+      width: 90%; /* Full width for the journey section */
+    }
+    
+    /* Dark mode styles */
+    body.dark {
+      background: linear-gradient(90deg, rgba(18, 32, 63, 1) 0%, rgba(42, 70, 98, 1) 100%);
+      color: #eaeaea;
+    }
+    
+    .header.dark {
+      background: rgba(0, 0, 0, 0.5);
     }
 
-    .about-me {
-      text-align: left; /* Align text to the left for better readability */
-      line-height: 1.6; /* Improve readability */
+    .nav ul li a.dark {
+      color: #b5d3e7;
     }
 
-    .dark-mode {
-      background: #0d1117;
+    .skills-grid .skill.dark {
+      background: #2a2a2a;
     }
 
-    .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode p,
-    .dark-mode .skills-title,
-    .dark-mode .education-title {
-      color: white; /* All text in dark mode */
+    .education-item.dark {
+      background: #2a2a2a;
     }
-
-    img{
-      width:50px;
-      height: 50px;
-    }
-
-    /* Light Theme */
-:root {
-    /* Light theme variables */
-}
-
-/* Dark Theme */
-[data-theme='dark'] {
-    /* Dark theme variables */
-}
-
   </style>
-  
+
   <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark-mode');
-      const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-      localStorage.setItem('theme', currentTheme);
-      document.getElementById('themeIcon').textContent = currentTheme === 'light' ? '🔅' : '🌙';
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    // Load saved theme from local storage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+      document.body.classList.toggle('dark', currentTheme === 'dark');
+      themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '🔅';
     }
 
-    document.getElementById('themeToggle').onclick = toggleTheme;
-
-    // Select the toggle button
-const themeToggleButton = document.getElementById('theme-toggle'); // Adjust this selector as needed
-
-// Function to apply the theme
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-}
-
-// Load theme preference on page load
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-
-// Toggle the theme and save preference
-themeToggleButton.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme); // Save preference
-});
-
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark');
+      themeIcon.textContent = isDark ? '🌙' : '🔅';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save selected theme
+    });
   </script>
+</body>
 </html>
