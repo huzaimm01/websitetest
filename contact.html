@@ -6,73 +6,6 @@
   <title>Contact | Huzaim Malik</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  
-</head>
-<body>
-  <div id="app">
-    <header class="header">
-      <div class="theme-toggle" id="themeToggle">
-        <span id="themeIcon">🔅</span>
-      </div>
-      <nav class="nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a href="resume.html">Résumé</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <h1>Contact Me</h1>
-
-    <div class="profile-pic">
-      <img src="pfp.jpg" alt="Huzaim Malik"> <!-- Replace with your image path -->
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-item">
-        <a href="mailto:huzaimm01@gmail.com">
-          <img src="email.webp" alt="Email Icon"> <!-- Replace with your email icon path -->
-          <div class="tooltip">Email 1</div>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="mailto:mail@huzaimmalik.com">
-          <img src="email.webp" alt="Email Icon"> <!-- Replace with your email icon path -->
-          <div class="tooltip">Email 2</div>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="tel:+16475940139">
-          <img src="phone.webp" alt="Phone Icon"> <!-- Replace with your phone icon path -->
-          <div class="tooltip">Phone</div>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="https://www.linkedin.com/in/muhammad-huzaim-malik-307421263/?originalSubdomain=ca" target="_blank">
-          <img src="linkedin.webp" alt="LinkedIn Icon"> <!-- Replace with your LinkedIn icon path -->
-          <div class="tooltip">LinkedIn Profile</div>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="https://github.com/huzaimm01" target="_blank">
-          <img src="github.png" alt="GitHub Icon"> <!-- Replace with your GitHub icon path -->
-          <div class="tooltip">GitHub Profile</div>
-        </a>
-      </div>
-      <div class="contact-item">
-        <a href="https://huzaimmalik.com" target="_blank">
-          <img src="picon.png" alt="Portfolio Icon"> <!-- Replace with your Portfolio icon path -->
-          <div class="tooltip">My Portfolio</div>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-</body>
   <style>
     .theme-toggle {
       cursor: pointer; /* Change cursor to pointer */
@@ -216,62 +149,100 @@
       opacity: 1; /* Fade in */
     }
 
+    /* Dark mode styles */
     .dark-mode {
       background: #0d1117;
+      color: white; /* Change text color */
     }
 
-    .dark-mode h1,
-    .dark-mode h2,
-    .dark-mode p {
-      color: white;
+    .dark-mode .header {
+      background: rgba(0, 0, 0, 0.5); /* Darker header */
     }
 
-    /* Dark mode styles for contact items */
     .dark-mode .contact-item {
-      background: #FCFCFC; /* Gray background in dark mode */
+      background: #2a2a2a; /* Dark background for contact items */
     }
-
-    /* Light Theme */
-:root {
-    /* Light theme variables */
-}
-
-/* Dark Theme */
-[data-theme='dark'] {
-    /* Dark theme variables */
-}
-
   </style>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+      <div class="theme-toggle" id="themeToggle">
+        <span id="themeIcon">🔅</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="resume.html">Résumé</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <h1>Contact Me</h1>
+
+    <div class="profile-pic">
+      <img src="pfp.jpg" alt="Huzaim Malik"> <!-- Replace with your image path -->
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <a href="mailto:huzaimm01@gmail.com">
+          <img src="email.webp" alt="Email Icon"> <!-- Replace with your email icon path -->
+          <div class="tooltip">Email 1</div>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="mailto:mail@huzaimmalik.com">
+          <img src="email.webp" alt="Email Icon"> <!-- Replace with your email icon path -->
+          <div class="tooltip">Email 2</div>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="tel:+16475940139">
+          <img src="phone.webp" alt="Phone Icon"> <!-- Replace with your phone icon path -->
+          <div class="tooltip">Phone</div>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="https://www.linkedin.com/in/muhammad-huzaim-malik-307421263/?originalSubdomain=ca" target="_blank">
+          <img src="linkedin.webp" alt="LinkedIn Icon"> <!-- Replace with your LinkedIn icon path -->
+          <div class="tooltip">LinkedIn Profile</div>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="https://github.com/huzaimm01" target="_blank">
+          <img src="github.png" alt="GitHub Icon"> <!-- Replace with your GitHub icon path -->
+          <div class="tooltip">GitHub Profile</div>
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="https://huzaimmalik.com" target="_blank">
+          <img src="picon.png" alt="Portfolio Icon"> <!-- Replace with your Portfolio icon path -->
+          <div class="tooltip">My Portfolio</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    function toggleTheme() {
-      const body = document.body;
-      body.classList.toggle('dark-mode');
-      const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-      localStorage.setItem('theme', currentTheme);
-      document.getElementById('themeIcon').textContent = currentTheme === 'light' ? '🔅' : '🌙';
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    // Load saved theme from local storage
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+      document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+      themeIcon.textContent = currentTheme === 'dark' ? '🌙' : '🔅';
     }
 
-    document.getElementById('themeToggle').onclick = toggleTheme;
-
-    // Select the toggle button
-const themeToggleButton = document.getElementById('theme-toggle'); // Adjust this selector as needed
-
-// Function to apply the theme
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-}
-
-// Load theme preference on page load
-const savedTheme = localStorage.getItem('theme') || 'light';
-applyTheme(savedTheme);
-
-// Toggle the theme and save preference
-themeToggleButton.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    applyTheme(newTheme);
-    localStorage.setItem('theme', newTheme); // Save preference
-});
-
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      themeIcon.textContent = isDark ? '🌙' : '🔅';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light'); // Save selected theme
+    });
   </script>
+</body>
 </html>
